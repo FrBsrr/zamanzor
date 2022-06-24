@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="zamanzor.Views.CartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:zamanzor.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+
+        <Label Background="White" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+
+        <TextBlock Margin="20,0,0,0" Grid.Column="0" Grid.Row="1" FontSize="25" FontFamily="Franklin Gothic Medium" FontStyle="Normal" TextDecorations="{x:Null}" FontWeight="Normal" Language="tr-tr" Text="Sepet"></TextBlock>
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Margin="-5,35,5,100">
+            <WrapPanel Orientation="Vertical" VerticalAlignment="Top"  Width="610" x:Name="vrapPanel">
+
+
+            </WrapPanel>
+        </ScrollViewer>
+
+        <TextBlock HorizontalAlignment="Right"></TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+
+
+
+            <TextBlock Margin="20,0,0,0" FontSize="25" FontFamily="Franklin Gothic Medium" FontStyle="Normal" TextDecorations="{x:Null}" FontWeight="Normal"><Run Language="tr-tr" Text="Adres"/></TextBlock>
+            <TextBlock FontSize="16" HorizontalAlignment="Center" Text="Ülke"></TextBlock>
+            <ComboBox Width="150" SelectionChanged="ComboBox_SelectionChanged" x:Name="ulkebox"></ComboBox>
+            <TextBlock FontSize="16" HorizontalAlignment="Center" Text="Şehir"></TextBlock>
+            <ComboBox Width="150" SelectionChanged="ComboBox_SelectionChanged_1" x:Name="sehirbox"></ComboBox>
+            <TextBlock FontSize="16" HorizontalAlignment="Center" Text="İlçe" ></TextBlock>
+            <ComboBox Width="150" x:Name="ilcebox"></ComboBox>
+            <TextBlock FontSize="16" HorizontalAlignment="Center" Text="Posta Kodu"></TextBlock>
+            <TextBox HorizontalAlignment="Center" Width="150" TextAlignment="Center" x:Name="zipcodebox" PreviewTextInput="NumberValidation"></TextBox>
+            <TextBlock FontSize="16" HorizontalAlignment="Center" Text="Adres"></TextBlock>
+            <TextBox HorizontalAlignment="Center" Width="200" Height="150" MaxHeight="150" x:Name="addressbox"></TextBox>
+
+            <Button Content="Satın Al" Width="100" Margin="0,50,0,0" Click="Button_Click"></Button>
+
+
+            <StackPanel Margin="0 10 0 0" Orientation="Horizontal"  />
+        </StackPanel>
+
+        <Button Width="160" Height="33"
+                Style="{StaticResource ZamanZorTheme}"  Canvas.Left="-172" Canvas.Top="-22" HorizontalAlignment="Left" VerticalAlignment="Center" Cursor="Hand" 
+                    x:Name="LoadPage" Margin="560,20,0,20" Command="{Binding HomeCommand}" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="466,578,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Toplam:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="512,577,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" x:Name="Toplam" Foreground="Black" FontWeight="Bold"/>
+        
+                       
+    </Grid>
+</UserControl>

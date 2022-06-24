@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SourceImages\1.png" />
+    <None Remove="SourceImages\23653.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.29" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Themes\KayitTheme.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

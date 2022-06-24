@@ -1,0 +1,68 @@
+﻿<UserControl
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:zamanzor.Views"
+             xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="zamanzor.Views.SellView"
+             mc:Ignorable="d" 
+             d:DesignHeight="720" d:DesignWidth="1280">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+
+        <Label Background="White" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+
+            <TextBlock Text="Ürün Ekle" FontSize="25" FontFamily="Franklin Gothic Medium" FontStyle="Normal" TextDecorations="{x:Null}" FontWeight="Normal"/>
+
+
+            <TextBlock Text="Ürün Adı" Margin="154,50,0,0" FontFamily="Franklin Gothic Medium" FontWeight="Bold"/>
+            <TextBox x:Name="prodname" TextWrapping="Wrap" Width="210" />
+
+            <TextBlock Text="Ürün Tanımı" Margin="154,10,0,0" FontFamily="Franklin Gothic Medium" FontWeight="Bold"/>
+            <TextBox x:Name="proddesc" TextWrapping="Wrap" Width="210" Height="100" />
+
+            <TextBlock Text="Fiyat" Margin="154,10,0,0" FontFamily="Franklin Gothic Medium" FontWeight="Bold"/>
+            <TextBox x:Name="prodprice" TextWrapping="Wrap" Width="120" Height="20" />
+
+            <TextBlock Text="Kategori" Margin="154,10,0,0" FontFamily="Franklin Gothic Medium" FontWeight="Bold"/>
+            <ComboBox x:Name="kombobox" Width="120" Height="20" >
+                <System:String>Elektronik</System:String>
+                <System:String>Sağlık</System:String>
+                <System:String>Müzik</System:String>
+                <System:String>Beyaz Eşya</System:String>
+                <System:String>Kitap</System:String>
+                <System:String>Giyim</System:String>
+                
+            </ComboBox>
+
+            <TextBlock Text="Resim Seç(200x200)" Margin="154,10,0,0" FontFamily="Franklin Gothic Medium" FontWeight="Bold"/>
+            <Button x:Name="filebutton" Height="15" Width="50" Content="Dosya Seç" FontSize="8" Click="filebutton_Click_1"></Button>
+
+            <Button Content="Ekle" Margin="0,50,0,0" Click="Button_Click"/>
+            
+            
+
+
+
+
+
+
+
+        </StackPanel>
+
+        <Button Width="160" Height="33"
+                Style="{StaticResource ZamanZorTheme}"  Canvas.Left="-172" Canvas.Top="-22" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand" 
+                    x:Name="LoadPage" Grid.Column="1" Margin="20" Command="{Binding HomeCommand}"/>
+    </Grid>
+</UserControl>
